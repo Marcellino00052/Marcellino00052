@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisa Pengaplikasian Metode Deep Convolutional Network dengan TensorFlow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form select, form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #output-prediksi {
+            display: none; /* Awalnya disembunyikan */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analisa Pengaplikasian Metode Deep Convolutional Network dengan TensorFlow</h1>
+        <p>Oleh: Kelompok 7<br>Kelas: S</p>
+        <p>1. 1462100157-Adam Sultonunmubin</p>
+        <p>2. 1462100060-Ferry Andhika Pratama</p>
+        <p>3. 1462100052-Marcellino Aditiya Yahya</p>
+        <p>4. 1462100128-M Naufal Hammaam Hasyidan</p>
+    </header>
+
+    <section id="input-pengguna">
+        <h2>Input Pengguna</h2>
+        <form id="predictionForm">
+            <h3>Pertanyaan Umum:</h3>
+            <label for="pertanyaan1">Pertanyaan 1:</label>
+            <select id="pertanyaan1" name="pertanyaan1" required>
+                <option value="option1">Opsi 1</option>
+                <option value="option2">Opsi 2</option>
+                <option value="option3">Opsi 3</option>
+            </select>
+
+            <label for="pertanyaan2">Pertanyaan 2:</label>
+            <select id="pertanyaan2" name="pertanyaan2" required>
+                <option value="option1">Opsi 1</option>
+                <option value="option2">Opsi 2</option>
+                <option value="option3">Opsi 3</option>
+            </select>
+
+            <label for="pertanyaan3">Pertanyaan 3:</label>
+            <select id="pertanyaan3" name="pertanyaan3" required>
+                <option value="option1">Opsi 1</option>
+                <option value="option2">Opsi 2</option>
+                <option value="option3">Opsi 3</option>
+            </select>
+
+            <h3>Pertanyaan Utama (Feature Importance):</h3>
+            <label for="pertanyaan-utama">Pilih Pertanyaan Utama:</label>
+            <select id="pertanyaan-utama" name="pertanyaan-utama" required>
+                <option value="option1">Opsi 1</option>
+                <option value="option2">Opsi 2</option>
+                <option value="option3">Opsi 3</option>
+            </select>
+
+            <label for="pertanyaan4">Pertanyaan 4:</label>
+            <select id="pertanyaan4" name="pertanyaan4" required>
+                <option value="option1">Opsi 1</option>
+                <option value="option2">Opsi 2</option>
+                <option value="option3">Opsi 3</option>
+            </select>
+
+            <!-- Tambahkan dropdown untuk 5 hingga 10 pertanyaan utama lainnya jika diperlukan -->
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </section>
+
+    <section id="output-prediksi">
+        <h2>Output Prediksi</h2>
+        <div id="hasil-prediksi">
+            <!-- Area untuk menampilkan hasil prediksi -->
+        </div>
+    </section>
+
+    <script>
+        function submitForm() {
+            // Ambil data dari form
+            var form = document.getElementById('predictionForm');
+            var formData = new FormData(form);
+
+            // Proses data (contoh simulasi)
+            var hasil = "Hasil prediksi berdasarkan input: ";
+            formData.forEach(function(value, key) {
+                hasil += key + ": " + value + ", ";
+            });
+
+            // Tampilkan hasil prediksi
+            document.getElementById('hasil-prediksi').innerText = hasil;
+            document.getElementById('output-prediksi').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
